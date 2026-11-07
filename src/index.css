@@ -1,0 +1,678 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* LIGHT THEME (Default when light class or data-theme="light") */
+  :root {
+    --bg-base: #F4F1E8;
+    --bg-surface: #FFFFFF;
+    --bg-elevated: #EBE7DC;
+    --fg-base: #11120E;
+    --fg-muted: #3F4035;
+    --accent-base: #926C15;
+    --border-base: rgba(17, 18, 14, 0.18);
+
+    /* Mappings for Tailwind theme classes with bold contrast for light mode */
+    --theme-bg-base: #F4F1E8;
+    --theme-bg-surface: #FFFFFF;
+    --theme-bg-elevated: #EBE7DC;
+    --theme-bg-subtle: #E2DDD0;
+    --theme-fg-base: #11120E;
+    --theme-fg-secondary: #24251D;
+    --theme-fg-muted: #3F4035;
+    --theme-fg-subtle: #4D4B3D;
+    --theme-accent-gold: #92400E;
+
+    --theme-bg-base-rgb: 244, 241, 232;
+    --theme-bg-surface-rgb: 255, 255, 255;
+    --theme-bg-elevated-rgb: 235, 231, 220;
+    --theme-bg-subtle-rgb: 226, 221, 208;
+    --theme-fg-base-rgb: 17, 18, 14;
+    --theme-fg-secondary-rgb: 36, 37, 29;
+    --theme-fg-muted-rgb: 63, 64, 53;
+    --theme-fg-subtle-rgb: 77, 75, 61;
+    --theme-accent-gold-rgb: 146, 64, 14;
+    --theme-gold-300-rgb: 146, 64, 14;
+    --theme-gold-400-rgb: 120, 53, 15;
+
+    /* shadcn / Tailwind HSL mappings for Light theme */
+    --background: 44 24% 93%;
+    --foreground: 60 9% 14%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 60 9% 14%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 60 9% 14%;
+
+    --primary: 39 31% 49%;
+    --primary-foreground: 44 24% 96%;
+
+    --secondary: 44 24% 89%;
+    --secondary-foreground: 60 9% 14%;
+
+    --muted: 44 24% 89%;
+    --muted-foreground: 51 6% 44%;
+
+    --accent: 39 31% 49%;
+    --accent-foreground: 44 24% 96%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 60 9% 14% / 0.12;
+    --input: 60 9% 14% / 0.12;
+    --ring: 39 31% 49%;
+
+    --radius: 0.75rem;
+
+    /* Semantic tokens */
+    --ivory-main: #25251F;
+    --ivory-muted: #77756B;
+    --gold-accent: #A58A56;
+    --charcoal-bg: #F4F1E8;
+    --charcoal-surface: #FFFFFF;
+    --charcoal-border: rgba(37, 37, 31, 0.12);
+  }
+
+  /* DARK THEME (When dark class or data-theme="dark") */
+  .dark,
+  [data-theme="dark"] {
+    --bg-base: #0E100D;
+    --bg-surface: #181A16;
+    --bg-elevated: #242721;
+    --fg-base: #FDFBF7;
+    --fg-muted: #C8C5B9;
+    --accent-base: #FBBF24;
+    --border-base: rgba(255, 255, 255, 0.16);
+
+    /* Mappings for Tailwind theme classes with bold contrast for dark mode */
+    --theme-bg-base: #0E100D;
+    --theme-bg-surface: #181A16;
+    --theme-bg-elevated: #242721;
+    --theme-bg-subtle: #2C2F28;
+    --theme-fg-base: #FDFBF7;
+    --theme-fg-secondary: #EEEBE0;
+    --theme-fg-muted: #C8C5B9;
+    --theme-fg-subtle: #A5A294;
+    --theme-accent-gold: #FBBF24;
+
+    --theme-bg-base-rgb: 14, 16, 13;
+    --theme-bg-surface-rgb: 24, 26, 22;
+    --theme-bg-elevated-rgb: 36, 39, 33;
+    --theme-bg-subtle-rgb: 44, 47, 40;
+    --theme-fg-base-rgb: 253, 251, 247;
+    --theme-fg-secondary-rgb: 238, 235, 224;
+    --theme-fg-muted-rgb: 200, 197, 185;
+    --theme-fg-subtle-rgb: 165, 162, 148;
+    --theme-accent-gold-rgb: 252, 211, 77;
+    --theme-gold-300-rgb: 251, 191, 36;
+    --theme-gold-400-rgb: 245, 158, 11;
+
+    /* shadcn / Tailwind HSL mappings for Dark theme */
+    --background: 90 6% 6%;
+    --foreground: 49 26% 88%;
+
+    --card: 90 6% 10%;
+    --card-foreground: 49 26% 88%;
+
+    --popover: 90 6% 10%;
+    --popover-foreground: 49 26% 88%;
+
+    --primary: 43 44% 72%;
+    --primary-foreground: 90 6% 6%;
+
+    --secondary: 75 9% 13%;
+    --secondary-foreground: 49 26% 88%;
+
+    --muted: 75 9% 13%;
+    --muted-foreground: 49 8% 62%;
+
+    --accent: 43 44% 72%;
+    --accent-foreground: 90 6% 6%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 49 26% 88%;
+
+    --border: 49 26% 88% / 0.14;
+    --input: 49 26% 88% / 0.14;
+    --ring: 43 44% 72%;
+
+    /* Semantic tokens */
+    --ivory-main: #E9E6D7;
+    --ivory-muted: #A5A397;
+    --gold-accent: #D6C69A;
+    --charcoal-bg: #10120F;
+    --charcoal-surface: #191B17;
+    --charcoal-border: rgba(233, 230, 215, 0.14);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    background-color: var(--bg-base);
+    color: var(--fg-base);
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    transition: background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+}
+
+/* Scoped override for Hero section so artwork typography always maintains luminous cinematic contrast */
+[data-hero-cinematic] {
+  --theme-bg-base: #10120F;
+  --theme-bg-surface: #191B17;
+  --theme-bg-elevated: #23251F;
+  --theme-fg-base: #F5F3EC;
+  --theme-fg-secondary: #EAE6DC;
+  --theme-fg-muted: #DCD7CA;
+  --theme-fg-subtle: #C4BDAC;
+  --theme-accent-gold: #D6C69A;
+
+  --theme-bg-base-rgb: 16, 18, 15;
+  --theme-bg-surface-rgb: 25, 27, 23;
+  --theme-bg-elevated-rgb: 35, 37, 31;
+  --theme-fg-base-rgb: 245, 243, 236;
+  --theme-fg-secondary-rgb: 234, 230, 220;
+  --theme-fg-muted-rgb: 220, 215, 202;
+  --theme-fg-subtle-rgb: 196, 189, 172;
+  --theme-accent-gold-rgb: 214, 198, 154;
+  --theme-gold-300-rgb: 242, 216, 140;
+  --theme-gold-400-rgb: 229, 195, 101;
+  color: #F5F3EC;
+}
+
+[data-hero-cinematic] h1,
+[data-hero-cinematic] h1 *,
+[data-hero-cinematic] .text-ivory-100,
+html.light [data-hero-cinematic] h1,
+html.light [data-hero-cinematic] h1 *,
+html.light [data-hero-cinematic] .text-ivory-100,
+html[data-theme="light"] [data-hero-cinematic] h1,
+html[data-theme="light"] [data-hero-cinematic] h1 *,
+html[data-theme="light"] [data-hero-cinematic] .text-ivory-100 {
+  color: #F5F3EC !important;
+}
+
+[data-hero-cinematic] .text-gold-300 {
+  color: #F2D88C !important;
+}
+
+[data-hero-cinematic] .text-gold-400 {
+  color: #E5C365 !important;
+}
+
+[data-hero-cinematic] .text-ivory-200 {
+  color: #EAE6DC !important;
+}
+
+[data-hero-cinematic] .text-ivory-300 {
+  color: #DCD7CA !important;
+}
+
+[data-hero-cinematic] .text-ivory-400 {
+  color: #C4BDAC !important;
+}
+
+/* ========================================================
+   LIGHT THEME ENHANCEMENTS: BOLD CONTRAST & MAXIMUM READABILITY
+   ======================================================== */
+
+/* Force deep, bold, readable amber tones for all gold text in Light Mode */
+html.light :not([data-hero-cinematic]) .text-gold-300,
+html[data-theme="light"] :not([data-hero-cinematic]) .text-gold-300 {
+  color: #92400E !important; /* Rich amber-bronze (WCAG AAA contrast on light) */
+  font-weight: 700 !important;
+}
+
+html.light :not([data-hero-cinematic]) .text-gold-400,
+html[data-theme="light"] :not([data-hero-cinematic]) .text-gold-400 {
+  color: #78350F !important; /* Deep burnt amber-900 (WCAG AAA contrast on light) */
+  font-weight: 700 !important;
+}
+
+html.light :not([data-hero-cinematic]) .text-gold-500,
+html[data-theme="light"] :not([data-hero-cinematic]) .text-gold-500 {
+  color: #78350F !important;
+  font-weight: 700 !important;
+}
+
+html.light :not([data-hero-cinematic]) .text-amber-300,
+html[data-theme="light"] :not([data-hero-cinematic]) .text-amber-300 {
+  color: #92400E !important;
+  font-weight: 700 !important;
+}
+
+html.light :not([data-hero-cinematic]) .text-amber-400,
+html[data-theme="light"] :not([data-hero-cinematic]) .text-amber-400 {
+  color: #78350F !important;
+  font-weight: 700 !important;
+}
+
+/* High-contrast grant amounts and large numbers */
+html.light :not([data-hero-cinematic]) .font-serif.text-gold-300,
+html.light :not([data-hero-cinematic]) .font-serif.text-gold-400,
+html[data-theme="light"] :not([data-hero-cinematic]) .font-serif.text-gold-300,
+html[data-theme="light"] :not([data-hero-cinematic]) .font-serif.text-gold-400 {
+  color: #78350F !important;
+  font-weight: 800 !important;
+}
+
+/* Notice and disclaimer banners in Light Mode: warm amber background with bold dark text */
+html.light :not([data-hero-cinematic]) .bg-gold-500\/10,
+html[data-theme="light"] :not([data-hero-cinematic]) .bg-gold-500\/10 {
+  background-color: #FEF3C7 !important; /* amber-100 */
+  border-color: #F59E0B !important;     /* amber-500 */
+  color: #78350F !important;            /* amber-900 */
+}
+
+html.light :not([data-hero-cinematic]) .bg-gold-500\/10 *,
+html[data-theme="light"] :not([data-hero-cinematic]) .bg-gold-500\/10 * {
+  color: #78350F !important;
+}
+
+html.light :not([data-hero-cinematic]) .bg-gold-500\/20,
+html[data-theme="light"] :not([data-hero-cinematic]) .bg-gold-500\/20 {
+  background-color: #FDE68A !important; /* amber-200 */
+  color: #78350F !important;
+  font-weight: 700 !important;
+}
+
+/* Active filter tabs and highlighted pills: solid bold amber with crisp white text */
+html.light :not([data-hero-cinematic]) .bg-gold-500\/20.border-gold-500\/60,
+html.light :not([data-hero-cinematic]) .bg-gold-500\/25.border-gold-500\/60,
+html[data-theme="light"] :not([data-hero-cinematic]) .bg-gold-500\/20.border-gold-500\/60,
+html[data-theme="light"] :not([data-hero-cinematic]) .bg-gold-500\/25.border-gold-500\/60 {
+  background-color: #92400E !important;
+  border-color: #78350F !important;
+  color: #FFFFFF !important;
+  font-weight: 800 !important;
+  box-shadow: 0 2px 10px rgba(146, 64, 14, 0.30) !important;
+}
+
+html.light :not([data-hero-cinematic]) .bg-gold-500\/20.border-gold-500\/60 *,
+html.light :not([data-hero-cinematic]) .bg-gold-500\/25.border-gold-500\/60 *,
+html[data-theme="light"] :not([data-hero-cinematic]) .bg-gold-500\/20.border-gold-500\/60 *,
+html[data-theme="light"] :not([data-hero-cinematic]) .bg-gold-500\/25.border-gold-500\/60 * {
+  color: #FFFFFF !important;
+}
+
+/* Inactive category tabs and buttons in light mode: solid crisp white card with bold charcoal text */
+html.light :not([data-hero-cinematic]) .bg-white\/5.text-ivory-400,
+html[data-theme="light"] :not([data-hero-cinematic]) .bg-white\/5.text-ivory-400 {
+  background-color: #FFFFFF !important;
+  color: #1F2019 !important;
+  border: 1.5px solid rgba(17, 18, 14, 0.20) !important;
+  font-weight: 700 !important;
+}
+
+/* Small status tags (e.g., STATE GOVERNMENT, CENTRAL GOVERNMENT, CORPORATE / CSR) */
+html.light :not([data-hero-cinematic]) .text-\[10px\].text-gold-400,
+html.light :not([data-hero-cinematic]) .text-\[11px\].text-gold-400,
+html[data-theme="light"] :not([data-hero-cinematic]) .text-\[10px\].text-gold-400,
+html[data-theme="light"] :not([data-hero-cinematic]) .text-\[11px\].text-gold-400 {
+  color: #78350F !important;
+  background-color: #FEF3C7 !important;
+  border-color: #D97706 !important;
+  font-weight: 800 !important;
+}
+
+/* Typography contrast enforcement */
+html.light :not([data-hero-cinematic]) .text-ivory-100,
+html[data-theme="light"] :not([data-hero-cinematic]) .text-ivory-100 {
+  color: #11120E !important;
+  font-weight: 750 !important;
+}
+
+html.light :not([data-hero-cinematic]) .text-ivory-200,
+html[data-theme="light"] :not([data-hero-cinematic]) .text-ivory-200 {
+  color: #1F2019 !important;
+  font-weight: 650 !important;
+}
+
+html.light :not([data-hero-cinematic]) .text-ivory-300,
+html[data-theme="light"] :not([data-hero-cinematic]) .text-ivory-300 {
+  color: #38382E !important;
+  font-weight: 550 !important;
+}
+
+html.light :not([data-hero-cinematic]) .text-ivory-400,
+html[data-theme="light"] :not([data-hero-cinematic]) .text-ivory-400 {
+  color: #4D4B3D !important;
+  font-weight: 550 !important;
+}
+
+/* Upgrade thin font-light to solid readable weight in light theme */
+html.light :not([data-hero-cinematic]) .font-light,
+html[data-theme="light"] :not([data-hero-cinematic]) .font-light {
+  font-weight: 480 !important;
+}
+
+/* Form inputs and dropdown selects */
+html.light :not([data-hero-cinematic]) input,
+html.light :not([data-hero-cinematic]) select,
+html.light :not([data-hero-cinematic]) textarea,
+html[data-theme="light"] :not([data-hero-cinematic]) input,
+html[data-theme="light"] :not([data-hero-cinematic]) select,
+html[data-theme="light"] :not([data-hero-cinematic]) textarea {
+  background-color: #FFFFFF !important;
+  color: #11120E !important;
+  border-color: rgba(17, 18, 14, 0.24) !important;
+  font-weight: 600 !important;
+}
+
+html.light :not([data-hero-cinematic]) input::placeholder,
+html[data-theme="light"] :not([data-hero-cinematic]) input::placeholder {
+  color: #5C5A4B !important;
+}
+
+/* Card borders and depth */
+html.light :not([data-hero-cinematic]) .editorial-glass,
+html[data-theme="light"] :not([data-hero-cinematic]) .editorial-glass {
+  background-color: #FFFFFF !important;
+  border: 1.5px solid rgba(17, 18, 14, 0.14) !important;
+  box-shadow: 0 4px 20px -2px rgba(17, 18, 14, 0.07) !important;
+}
+
+/* General border adaptation */
+html.light :not([data-hero-cinematic]) .border-white\/10,
+html[data-theme="light"] :not([data-hero-cinematic]) .border-white\/10 {
+  border-color: rgba(17, 18, 14, 0.18) !important;
+}
+
+html.light :not([data-hero-cinematic]) .border-white\/5,
+html[data-theme="light"] :not([data-hero-cinematic]) .border-white\/5 {
+  border-color: rgba(17, 18, 14, 0.12) !important;
+}
+
+html.light :not([data-hero-cinematic]) .border-white\/20,
+html[data-theme="light"] :not([data-hero-cinematic]) .border-white\/20 {
+  border-color: rgba(17, 18, 14, 0.25) !important;
+}
+
+html.light :not([data-hero-cinematic]) .bg-white\/5,
+html[data-theme="light"] :not([data-hero-cinematic]) .bg-white\/5 {
+  background-color: rgba(17, 18, 14, 0.05);
+}
+
+html.light :not([data-hero-cinematic]) .bg-white\/10,
+html[data-theme="light"] :not([data-hero-cinematic]) .bg-white\/10 {
+  background-color: rgba(17, 18, 14, 0.09);
+}
+
+/* ========================================================
+   DARK THEME ENHANCEMENTS: BOLD VIBRANT COLOURS & MAXIMUM READABILITY
+   ======================================================== */
+
+/* 1. Luminous Gold & Amber Accents in Dark Theme */
+.dark .text-gold-300,
+[data-theme="dark"] .text-gold-300 {
+  color: #FBBF24 !important; /* Luminous electric amber-gold */
+  font-weight: 700 !important;
+  text-shadow: 0 0 12px rgba(251, 191, 36, 0.35);
+}
+
+.dark .text-gold-400,
+[data-theme="dark"] .text-gold-400 {
+  color: #FCD34D !important; /* Radiant light gold */
+  font-weight: 700 !important;
+  text-shadow: 0 0 10px rgba(252, 211, 77, 0.30);
+}
+
+.dark .text-amber-300,
+[data-theme="dark"] .text-amber-300 {
+  color: #FBBF24 !important;
+  font-weight: 700 !important;
+}
+
+.dark .text-amber-400,
+[data-theme="dark"] .text-amber-400 {
+  color: #FCD34D !important;
+  font-weight: 700 !important;
+}
+
+/* 2. Vibrant Metric Numbers and Grant Amounts in Dark Theme */
+.dark .font-serif.text-gold-300,
+.dark .font-serif.text-gold-400,
+[data-theme="dark"] .font-serif.text-gold-300,
+[data-theme="dark"] .font-serif.text-gold-400 {
+  color: #FBBF24 !important;
+  font-weight: 800 !important;
+  text-shadow: 0 0 18px rgba(251, 191, 36, 0.40);
+}
+
+/* 3. Bold Vibrant Colors for Pipeline & Status in Dark Theme */
+.dark .text-blue-300,
+[data-theme="dark"] .text-blue-300 {
+  color: #60A5FA !important; /* Vivid sky blue */
+  font-weight: 700 !important;
+  text-shadow: 0 0 10px rgba(96, 165, 250, 0.30);
+}
+
+.dark .text-emerald-300,
+.dark .text-emerald-400,
+[data-theme="dark"] .text-emerald-300,
+[data-theme="dark"] .text-emerald-400 {
+  color: #34D399 !important; /* Electric mint emerald */
+  font-weight: 700 !important;
+  text-shadow: 0 0 10px rgba(52, 211, 153, 0.30);
+}
+
+.dark .text-purple-300,
+[data-theme="dark"] .text-purple-300 {
+  color: #C084FC !important; /* Vibrant lilac-violet */
+  font-weight: 700 !important;
+  text-shadow: 0 0 10px rgba(192, 132, 252, 0.30);
+}
+
+/* 4. Active Filter Tabs & Highlighted Pills in Dark Theme */
+.dark .bg-gold-500\/20.border-gold-500\/60,
+.dark .bg-gold-500\/25.border-gold-500\/60,
+[data-theme="dark"] .bg-gold-500\/20.border-gold-500\/60,
+[data-theme="dark"] .bg-gold-500\/25.border-gold-500\/60 {
+  background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%) !important;
+  border-color: #FDE68A !important;
+  color: #10120F !important;
+  font-weight: 800 !important;
+  box-shadow: 0 0 18px rgba(245, 158, 11, 0.45) !important;
+}
+
+.dark .bg-gold-500\/20.border-gold-500\/60 *,
+.dark .bg-gold-500\/25.border-gold-500\/60 *,
+[data-theme="dark"] .bg-gold-500\/20.border-gold-500\/60 *,
+[data-theme="dark"] .bg-gold-500\/25.border-gold-500\/60 * {
+  color: #10120F !important;
+}
+
+/* 5. Inactive Filter Tabs in Dark Theme: Crisp visible card with bright ivory text */
+.dark .bg-white\/5.text-ivory-400,
+[data-theme="dark"] .bg-white\/5.text-ivory-400 {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  color: #EEEBE0 !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  font-weight: 600 !important;
+}
+
+.dark .bg-white\/5.text-ivory-400:hover,
+[data-theme="dark"] .bg-white\/5.text-ivory-400:hover {
+  background-color: rgba(255, 255, 255, 0.14) !important;
+  color: #FFFFFF !important;
+  border-color: rgba(251, 191, 36, 0.45) !important;
+}
+
+/* 6. Tags & Badges in Dark Theme (STATE GOVERNMENT, CENTRAL GOVT, CSR) */
+.dark .text-\[10px\].text-gold-400,
+.dark .text-\[11px\].text-gold-400,
+[data-theme="dark"] .text-\[10px\].text-gold-400,
+[data-theme="dark"] .text-\[11px\].text-gold-400 {
+  color: #FDE047 !important; /* Bright electric gold */
+  background-color: rgba(245, 158, 11, 0.18) !important;
+  border-color: rgba(245, 158, 11, 0.40) !important;
+  font-weight: 750 !important;
+}
+
+/* 7. Notice & Compliance Banners in Dark Theme: Warm glowing amber with bright readable text */
+.dark .bg-gold-500\/10,
+[data-theme="dark"] .bg-gold-500\/10 {
+  background-color: rgba(245, 158, 11, 0.14) !important;
+  border-color: rgba(245, 158, 11, 0.40) !important;
+  color: #FEF3C7 !important;
+}
+
+.dark .bg-gold-500\/10 *,
+[data-theme="dark"] .bg-gold-500\/10 * {
+  color: #FEF3C7 !important;
+}
+
+.dark .bg-gold-500\/10 strong,
+[data-theme="dark"] .bg-gold-500\/10 strong {
+  color: #FDE047 !important;
+  font-weight: 750 !important;
+}
+
+.dark .bg-amber-500\/10,
+[data-theme="dark"] .bg-amber-500\/10 {
+  background-color: rgba(245, 158, 11, 0.14) !important;
+  border-color: rgba(245, 158, 11, 0.40) !important;
+}
+
+.dark .bg-amber-500\/10 *,
+[data-theme="dark"] .bg-amber-500\/10 * {
+  color: #FEF3C7 !important;
+}
+
+.dark .bg-amber-500\/10 strong,
+[data-theme="dark"] .bg-amber-500\/10 strong {
+  color: #FDE047 !important;
+  font-weight: 750 !important;
+}
+
+/* 8. Text Legibility in Dark Theme */
+.dark .text-ivory-100,
+[data-theme="dark"] .text-ivory-100 {
+  color: #FDFBF7 !important;
+  font-weight: 700;
+}
+
+.dark .text-ivory-200,
+[data-theme="dark"] .text-ivory-200 {
+  color: #EEEBE0 !important;
+  font-weight: 600;
+}
+
+.dark .text-ivory-300,
+[data-theme="dark"] .text-ivory-300 {
+  color: #D6D3C4 !important;
+  font-weight: 500;
+}
+
+.dark .text-ivory-400,
+[data-theme="dark"] .text-ivory-400 {
+  color: #B8B5A5 !important;
+  font-weight: 500;
+}
+
+/* 9. Descriptions & Card Typography */
+.dark .font-light,
+[data-theme="dark"] .font-light {
+  font-weight: 450 !important;
+}
+
+/* 10. Form Inputs and Selects in Dark Theme */
+.dark input,
+.dark select,
+.dark textarea,
+[data-theme="dark"] input,
+[data-theme="dark"] select,
+[data-theme="dark"] textarea {
+  background-color: rgba(16, 18, 15, 0.95) !important;
+  color: #FDFBF7 !important;
+  border-color: rgba(255, 255, 255, 0.18) !important;
+  font-weight: 550 !important;
+}
+
+.dark input::placeholder,
+[data-theme="dark"] input::placeholder {
+  color: #9E9B8D !important;
+}
+
+/* Film grain effect using SVG pattern */
+.noise-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E");
+}
+
+/* Custom cinematic scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-elevated);
+  border-radius: 9999px;
+  border: 2px solid var(--bg-base);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-base);
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Adaptive Editorial Glass card effect */
+.editorial-glass {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-base);
+  box-shadow: 0 8px 32px 0 rgba(37, 37, 31, 0.04);
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dark .editorial-glass,
+[data-theme="dark"] .editorial-glass {
+  background: rgba(25, 27, 23, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-base);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.editorial-glass-gold {
+  background: linear-gradient(135deg, rgba(165, 138, 86, 0.08) 0%, rgba(255, 255, 255, 0.95) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(165, 138, 86, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(165, 138, 86, 0.06);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.dark .editorial-glass-gold,
+[data-theme="dark"] .editorial-glass-gold {
+  background: linear-gradient(135deg, rgba(214, 198, 154, 0.1) 0%, rgba(25, 27, 23, 0.85) 100%);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(214, 198, 154, 0.3);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+}
+
+/* Subtle gold glow */
+.gold-glow {
+  box-shadow: 0 0 40px -10px rgba(214, 198, 154, 0.25);
+}
